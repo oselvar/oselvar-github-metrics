@@ -1,0 +1,29 @@
+name: Update Oselvar CSV
+
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron:  '43 * * * *'
+
+jobs:
+  update-oselvar-csv:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 15.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 15.x
+    - run: npm install -g npm@latest
+    - name: Fetch latest data
+      run: GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} ./update.sh
+    - name: Commit and push if it changed
+      run: |-
+        git config user.name "Oselvar Bot"
+        git config user.email "actions@users.noreply.github.com"
+        git add -A
+        timestamp=$(date -u)
+        git commit -m "Latest data: ${timestamp}" || exit 0
+        git push
