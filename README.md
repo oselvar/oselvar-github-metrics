@@ -5,7 +5,7 @@ for this GitHub organisation's repositories listed in [repositories.txt](./repos
 
 The CSV files are updates hourly by a [GitHub Action](./github/workflows/oselvar.yml).
 
-View charts for this data at `https://oselvar.com/github/ORGANISATION_NAME`
+View charts for this data at `https://oselvar.com/github/ORGANISATION_NAME/oselvar-github-metrics/DEFAULT_BRANCH`
 
 ## Publish your own Oselvar Metrics
 
@@ -15,7 +15,7 @@ To do this you need to set up a fork of this repository to host your data.
 1. Click the green `Use this template` button or follow [this link](https://github.com/oselvar/oselvar-github-metrics/generate)
 1. Modify `repositories.txt` and list your GitHub organisation's repositories
 1. Commit and push your changes
-1. Go to https://oselvar.com/github/ORGANISATION_NAME to see your data
+1. Go to https://oselvar.com/github/ORGANISATION_NAME/oselvar-github-metrics/DEFAULT_BRANCH to see your data
 
 If you want to override the stages in the generated CSV, you can add a `;` after the repo name,
 followed by a comma-separated list of stages.
