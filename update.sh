@@ -13,8 +13,10 @@ while read line; do
   mkdir -p "${dir}"
   echo "${repo} ..."
   if [ -z "${stages}" ]; then
-    npx -y @oselvar/connector-github --repo ${repo} --type issues --auth "${GITHUB_TOKEN}"                      > "${dir}/issues.csv"
+    npx -y @oselvar/connector-github --repo ${repo} --type pullRequests --auth "${GITHUB_TOKEN}"                      > "${dir}/pullRequests.csv"
+    npx -y @oselvar/connector-github --repo ${repo} --type issues       --auth "${GITHUB_TOKEN}"                      > "${dir}/issues.csv"
   else
-    npx -y @oselvar/connector-github --repo ${repo} --type issues --auth "${GITHUB_TOKEN}" --stages "${stages}" > "${dir}/issues.csv"
+    npx -y @oselvar/connector-github --repo ${repo} --type pullRequests --auth "${GITHUB_TOKEN}" --stages "${stages}" > "${dir}/pullRequests.csv"
+    npx -y @oselvar/connector-github --repo ${repo} --type issues       --auth "${GITHUB_TOKEN}" --stages "${stages}" > "${dir}/issues.csv"
   fi
 done < repositories.txt
