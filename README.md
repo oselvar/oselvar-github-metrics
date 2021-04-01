@@ -26,4 +26,17 @@ myorg/myrepo;open,Needs Maintainer Action,Needs Maintainer Review,Waiting for Co
 ```
 
 See [Oselvar Connector](https://github.com/oselvar/connector/) for more details, or run
-`npx @oselvar/connector-github --help`.
+`npx @oselvar/connector-github@latest --help`.
+
+## Troubleshooting
+
+If your GitHub Action job fails an error message like `GraphqlError: Resource not accessible by integration`,
+then a workaround is to use a *personal access token* rather than the token provided automatically by GitHub Actions.
+
+1. Create a [new personal access token](https://github.com/settings/tokens/new) with `repo` scope. *Copy it to your clipboard*.
+1. Store your new token in a new `PERSONAL_GITHUB_TOKEN` repository secret via `Settings` -> `Secrets` -> `New repository secret`.
+1. Modify [.github/workflows/oselvar.yml](./.github/workflows/oselvar.yml) to use your new token:
+```diff
+-run: GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} ./update.sh
++run: GITHUB_TOKEN=${{ secrets.PERSONAL_GITHUB_TOKEN }} ./update.sh
+```
