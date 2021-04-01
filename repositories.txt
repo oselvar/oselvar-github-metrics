@@ -1,2 +1,1 @@
 oselvar/connector
-oselvar/monorepo
