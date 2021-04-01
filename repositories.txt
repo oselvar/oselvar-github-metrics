@@ -1,1 +1,2 @@
 oselvar/connector
+DefinitelyTyped/DefinitelyTyped;open,labeled,commented,Needs Maintainer Action,Needs Maintainer Review,Waiting for Code Reviews,Needs Author Action,Waiting for Author to Merge,Recently Merged,Other,closed
