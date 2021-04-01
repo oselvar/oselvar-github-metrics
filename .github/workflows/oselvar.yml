@@ -16,7 +16,9 @@ jobs:
       with:
         node-version: 15.x
     - name: Update Oselvar CSV
-      run: GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} ./update.sh
+      env:
+        GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN || secrets.GITHUB_TOKEN }} 
+      run: ./update.sh
     - name: Commit and push if it changed
       run: |-
         git config user.name "Oselvar Bot"
