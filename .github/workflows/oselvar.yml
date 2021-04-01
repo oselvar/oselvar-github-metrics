@@ -1,4 +1,4 @@
-name: Update Oselvar CSV
+name: Oselvar GitHub Metrics
 
 on:
   push:
@@ -12,12 +12,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js 15.x
-      uses: actions/setup-node@v1
+    - uses: actions/setup-node@v1
       with:
         node-version: 15.x
-    - run: npm install -g npm@latest
-    - name: Fetch latest data
+    - name: Update Oselvar CSV
       run: GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} ./update.sh
     - name: Commit and push if it changed
       run: |-
