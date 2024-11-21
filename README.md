@@ -9,7 +9,7 @@ View charts for this data at [oselvar.com]
 
 ## Publish your own Oselvar Metrics
 
-You can publish metrics for repositories in you own GitHub organisation and view them on https://oselvar.com/
+You can publish metrics for repositories in you own GitHub organisation and view them on https://www.oselvar.com/
 To do this you need to set up a fork of this repository to host your data.
 
 1. Click the green `Use this template` button or follow [this link](https://github.com/oselvar/oselvar-github-metrics/generate).
@@ -41,9 +41,9 @@ The next time your GitHub Action runs, it will pick up `PERSONAL_GITHUB_TOKEN` i
 <!--
 Update this link if you publish your own metrics:
 
-* Replace oselvar with your organisatio name
+* Replace oselvar with your organisation name
 * Replace main with your default branch name, if it's different
 
 -->
 
-[oselvar.com]: https://oselvar.com/github/oselvar/oselvar-github-metrics/main
+[oselvar.com]: https://www.oselvar.com/github/oselvar/oselvar-github-metrics/main
